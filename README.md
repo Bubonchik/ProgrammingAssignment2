@@ -13,6 +13,8 @@ set the value of the vector
 get the value of the vector
 set the value of the mean
 get the value of the mean
+
+```{r}
 makeVector <- function(x = numeric()) {
         m <- NULL
         set <- function(y) {
@@ -26,8 +28,10 @@ makeVector <- function(x = numeric()) {
              setmean = setmean,
              getmean = getmean)
 }
+```
 The following function calculates the mean of the special "vector" created with the above function. However, it first checks to see if the mean has already been calculated. If so, it gets the mean from the cache and skips the computation. Otherwise, it calculates the mean of the data and sets the value of the mean in the cache via the setmean function.
 
+```{r}
 cachemean <- function(x, ...) {
         m <- x$getmean()
         if(!is.null(m)) {
@@ -39,6 +43,8 @@ cachemean <- function(x, ...) {
         x$setmean(m)
         m
 }
+```
+
 Assignment: Caching the Inverse of a Matrix
 Matrix inversion is usually a costly computation and there may be some benefit to caching the inverse of a matrix rather than computing it repeatedly (there are also alternatives to matrix inversion that we will not discuss here). Your assignment is to write a pair of functions that cache the inverse of a matrix.
 
