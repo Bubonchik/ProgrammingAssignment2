@@ -30,4 +30,3 @@ cacheSolve <- function(x, ...) {
         inv
 }
   
-© 2019 GitHub, Inc.
